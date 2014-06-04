@@ -1,0 +1,22 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="jumbotron">
+  <h1>Never Forget Anything Important Again<span ng-show="currentUser">, {{ currentUser.name }}</span>.</h1>
+  <p class="lead">
+    <img src="images/brain.png" alt="brain"><br>
+    <p>Easily Schedule Text Message and Phone Call Reminders</p>
+    <p>Use remindzo For Important Events and Todo's in Life</p>
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="/remind">Create a New Reminder</a></p>
+</div>
+
+<div class="row marketing">
+  <div ng-repeat="thing in awesomeThings">
+      <h4>{{thing.name}}</h4>
+      <p>{{thing.info}}</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>♥ from the remindzo team</p>
+</div>
