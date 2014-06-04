@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('reminderApp')
-  .controller('RemindCtrl', function ($scope){
+  .controller('RemindCtrl', function ($scope, Reminder){
     $scope.reminder = {};
 
     $scope.newReminder = function(form) {
