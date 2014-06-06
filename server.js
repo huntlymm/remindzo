@@ -5,6 +5,7 @@ var express = require('express'),
     fs = require('fs'),
     mongoose = require('mongoose');
 
+
 /**
  * Main application file
  */
@@ -33,6 +34,8 @@ var passport = require('./lib/config/passport');
 var app = express();
 require('./lib/config/express')(app);
 require('./lib/routes')(app);
+
+require('./lib/inittasks.js');
 
 // Start server
 app.listen(config.port, config.ip, function () {

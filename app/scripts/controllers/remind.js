@@ -16,6 +16,9 @@ angular.module('reminderApp')
         //set date hour & min to match time object
         $scope.reminder.date.setHours($scope.reminder.time.getHours());
         $scope.reminder.date.setMinutes($scope.reminder.time.getMinutes());
+        $scope.reminder.date.setSeconds(0);
+        $scope.reminder.date.setMilliseconds(0);
+
 
         $http.post('/reminders', $scope.reminder)
         .success(function(reminder){
