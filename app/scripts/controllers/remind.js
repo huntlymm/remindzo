@@ -13,14 +13,12 @@ angular.module('reminderApp')
       $scope.submitted = true;
 
       if(form.$valid) {
-        console.log($scope.reminder);
         //set date hour & min to match time object
         $scope.reminder.date.setHours($scope.reminder.time.getHours());
         $scope.reminder.date.setMinutes($scope.reminder.time.getMinutes());
 
         $http.post('/reminders', $scope.reminder)
         .success(function(reminder){
-          console.log('returned reminder: ' + reminder);
           $location.path('/index');
         });
       }
