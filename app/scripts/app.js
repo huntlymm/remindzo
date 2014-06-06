@@ -31,6 +31,11 @@ angular.module('reminderApp', [
         controller: 'RemindCtrl',
         authenticate: true
       })
+      .when('/index', {
+        templateUrl: 'partials/index',
+        controller: 'IndexCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });

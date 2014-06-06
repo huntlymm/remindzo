@@ -1,0 +1,17 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+<div class="row">
+  <div class="col-sm-12">
+  <h1>Your Reminders</h1>
+  </div>
+  <div class="col-sm-12">
+    <ul ng-repeat="reminder in reminders">
+      <li>
+        <h3><i>Message:</i> {{reminder.message}}</h3>
+        <h4><i>Scheduled for:</i> {{reminder.date}}</h4>
+        <h4><i>Phone Number:</i> {{reminder.phone}}</h4>
+      </li>
+    </ul>
+  </div>
+
+</div>
