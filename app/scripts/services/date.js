@@ -10,8 +10,6 @@ angular.module('reminderApp')
           scope.opened = true;
         };
 
-        scope.reminder.date = new Date();
-
         scope.dateOptions = {
           formatYear: 'yy',
           startingDay: 1

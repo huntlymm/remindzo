@@ -5,7 +5,7 @@
     <h1>Edit Reminder</h1>
   </div>
   <div class="col-sm-12">
-    <form class="form" name="form" ng-submit="newReminder(form)" novalidate>
+    <form class="form" name="form" ng-submit="updateReminder(form)" novalidate>
 
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                           'has-error': form.name.$invalid && submitted }">
@@ -55,7 +55,7 @@
         </p>
       </div>
 
-      <button class="btn btn-lg btn-primary" type="submit">Create Reminder</button>
+      <button class="btn btn-lg btn-primary" type="submit">Update Reminder</button>
     </form>
   </div>
 </div>

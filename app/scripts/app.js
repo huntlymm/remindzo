@@ -36,6 +36,10 @@ angular.module('reminderApp', [
         controller: 'IndexCtrl',
         authenticate: true
       })
+      .when('/edit', {
+        templateUrl: 'partials/edit.html',
+        controller: 'EditCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

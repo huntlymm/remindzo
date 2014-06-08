@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('reminderApp')
-  .controller('RemindCtrl', function ($rootScope, $scope, $http, $location, DateProps, Reminder){
+  .controller('RemindCtrl', function ($scope, $http, $location, DateProps, Reminder){
 
     $scope.reminder = {};
 
@@ -19,14 +19,13 @@ angular.module('reminderApp')
 
         //create new reminder
         Reminder.create($scope.reminder, $location);
-
       }
     };
 
     //Format Calendar
     DateProps.calendarFormat($scope);
+    $scope.reminder.date = new Date();
 
     // Format Time Selection //
     DateProps.timeFormat($scope);
-
   });
