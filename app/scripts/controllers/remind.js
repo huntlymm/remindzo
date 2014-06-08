@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('reminderApp')
-  .controller('RemindCtrl', function ($rootScope, $scope, $http, $location){
+  .controller('RemindCtrl', function ($rootScope, $scope, $http, $location, DateProps, Reminder){
+
     $scope.reminder = {};
 
     //Get current user
@@ -14,63 +15,18 @@ angular.module('reminderApp')
 
       if(form.$valid) {
         //set date hour & min to match time object
-        $scope.reminder.date.setHours($scope.reminder.time.getHours());
-        $scope.reminder.date.setMinutes($scope.reminder.time.getMinutes());
-        $scope.reminder.date.setSeconds(0);
-        $scope.reminder.date.setMilliseconds(0);
+        Reminder.assignTime($scope);
 
+        //create new reminder
+        Reminder.create($scope.reminder, $location);
 
-        $http.post('/reminders', $scope.reminder)
-        .success(function(reminder){
-          $location.path('/index');
-        });
       }
     };
 
-    //Popup calendar for date selection//
+    //Format Calendar
+    DateProps.calendarFormat($scope);
 
-    //default selection is today
-    $scope.today = function() {
-      $scope.reminder.date = new Date();
-    };
-    $scope.today();
-
-    //can't select before today
-    $scope.toggleMin = function() {
-      $scope.minDate = new Date();
-    };
-    $scope.toggleMin();
-
-    $scope.open = function($event) {
-      $event.preventDefault();
-      $event.stopPropagation();
-      $scope.opened = true;
-    };
-
-    $scope.dateOptions = {
-      formatYear: 'yy',
-      startingDay: 1
-    };
-
-
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
-
-
-    // Time selection //
-
-    $scope.reminder.time = new Date();
-
-    $scope.hstep = 1;
-    $scope.mstep = 15;
-
-    $scope.ismeridian = true;
-
-    $scope.changed = function () {
-      console.log('Time changed to: ' + $scope.reminder.time);
-      console.log('Current hour is: ' + $scope.reminder.time.getHours());
-    };
-
-    // Get hour and minute from Time //
+    // Format Time Selection //
+    DateProps.timeFormat($scope);
 
   });
