@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('reminderApp')
-  .controller('IndexCtrl', function ($scope, $http) {
+  .controller('IndexCtrl', function ($scope, $http, $location, Reminder) {
     $scope.reminders = [];
     $scope.ownerId = {};
 
@@ -35,5 +35,8 @@ angular.module('reminderApp')
       });
     };
 
+    $scope.edit = function(id) {
+      $location.path('/edit').search({id: id});
+    };
 
   });

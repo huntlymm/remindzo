@@ -1,8 +1,13 @@
 'use strict';
 
 angular.module('reminderApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth) {
+  .controller('SettingsCtrl', function ($scope, $http, User, Auth) {
     $scope.errors = {};
+    $scope.ownerId = {};
+
+    $http.get('api/users/me').success(function (user){
+      $scope.ownerId = user._id;
+    });
 
     $scope.changePassword = function(form) {
       $scope.submitted = true;
@@ -18,4 +23,12 @@ angular.module('reminderApp')
         });
       }
 		};
+
+    $scope.changePhone = function (form) {
+      $scope.submitted = true;
+
+      if(form.$valid) {
+        function()
+      }
+    };
   });

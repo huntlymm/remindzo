@@ -8,6 +8,7 @@ angular.module('reminderApp')
     //Get current user
     $http.get('api/users/me').success(function(user){
       $scope.reminder.ownerId = user._id;
+      $scope.reminder.phone = user.phone || "";
     });
 
     $scope.newReminder = function(form) {
@@ -28,4 +29,5 @@ angular.module('reminderApp')
 
     // Format Time Selection //
     DateProps.timeFormat($scope);
+
   });

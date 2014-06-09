@@ -22,8 +22,7 @@
                                           'has-error': form.name.$invalid && submitted }">
         <label>Phone Number to Send Reminder to</label>
 
-        <input type="text" name="phone" class="form-control" ng-model="reminder.phone"
-               required/>
+        <input name="masked" ui-mask="(999) 999-9999" ng-model="reminder.phone"  class="form-control ng-dirty ng-valid ng-valid-mask" required/>
         <p class="help-block" ng-show="form.name.$error.required && submitted">
           A phone number is required
         </p>

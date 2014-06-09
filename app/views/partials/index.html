@@ -11,7 +11,7 @@
         <h4><i>Scheduled for:</i> {{reminder.date}}</h4>
         <h4><i>Phone Number:</i> {{reminder.phone}}</h4>
         <button class="btn btn-sm" ng-really-message="Are you sure you want to delete this reminder?" ng-really-click="delete(reminder._id)">Delete Reminder</button>
-        <button class="btn btn-sm">Edit Reminder</button>
+        <button class="btn btn-sm" ng-click="edit(reminder._id)">Edit Reminder</button>
       </li>
     </ul>
   </div>

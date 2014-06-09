@@ -27,6 +27,8 @@ angular.module('reminderApp')
 
         scope.ismeridian = true;
 
+        scope.reminder.time = new Date('October 13, 2014 12:00:00');
+
         scope.changed = function () {
           console.log('Time changed to: ' + scope.reminder.time);
           console.log('Current hour is: ' + scope.reminder.time.getHours());

@@ -12,7 +12,8 @@ angular.module('reminderApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          phone: $scope.user.phone
         })
         .then( function() {
           // Account created, redirect to home

@@ -5,7 +5,8 @@ angular.module('reminderApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.mask'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -40,9 +41,10 @@ angular.module('reminderApp', [
         templateUrl: 'partials/edit.html',
         controller: 'EditCtrl'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+      // .otherwise({
+      //   redirectTo: '/'
+      // })
+      ;
 
     $locationProvider.html5Mode(true);
 
