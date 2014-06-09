@@ -20,7 +20,7 @@
 
       <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                           'has-error': form.name.$invalid && submitted }">
-        <label>Phone Number to Send Reminder to</label>
+        <label>Cell Phone Number to Send Reminder to</label>
 
         <input name="masked" ui-mask="(999) 999-9999" ng-model="reminder.phone"  class="form-control ng-dirty ng-valid ng-valid-mask" required/>
         <p class="help-block" ng-show="form.name.$error.required && submitted">

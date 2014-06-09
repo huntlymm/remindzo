@@ -2,7 +2,7 @@
 
 angular.module('reminderApp')
   .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
-    
+
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
     $cookieStore.remove('user');
@@ -11,10 +11,10 @@ angular.module('reminderApp')
 
       /**
        * Authenticate user
-       * 
+       *
        * @param  {Object}   user     - login info
        * @param  {Function} callback - optional
-       * @return {Promise}            
+       * @return {Promise}
        */
       login: function(user, callback) {
         var cb = callback || angular.noop;
@@ -32,9 +32,9 @@ angular.module('reminderApp')
 
       /**
        * Unauthenticate user
-       * 
+       *
        * @param  {Function} callback - optional
-       * @return {Promise}           
+       * @return {Promise}
        */
       logout: function(callback) {
         var cb = callback || angular.noop;
@@ -50,10 +50,10 @@ angular.module('reminderApp')
 
       /**
        * Create a new user
-       * 
+       *
        * @param  {Object}   user     - user info
        * @param  {Function} callback - optional
-       * @return {Promise}            
+       * @return {Promise}
        */
       createUser: function(user, callback) {
         var cb = callback || angular.noop;
@@ -70,11 +70,11 @@ angular.module('reminderApp')
 
       /**
        * Change password
-       * 
-       * @param  {String}   oldPassword 
-       * @param  {String}   newPassword 
+       *
+       * @param  {String}   oldPassword
+       * @param  {String}   newPassword
        * @param  {Function} callback    - optional
-       * @return {Promise}              
+       * @return {Promise}
        */
       changePassword: function(oldPassword, newPassword, callback) {
         var cb = callback || angular.noop;
@@ -89,9 +89,10 @@ angular.module('reminderApp')
         }).$promise;
       },
 
+
       /**
        * Gets all available info on authenticated user
-       * 
+       *
        * @return {Object} user
        */
       currentUser: function() {
@@ -100,7 +101,7 @@ angular.module('reminderApp')
 
       /**
        * Simple check to see if a user is logged in
-       * 
+       *
        * @return {Boolean}
        */
       isLoggedIn: function() {

@@ -51,8 +51,11 @@
         <p class="help-block" ng-show="form.password.$error.mongoose">
           {{ errors.password }}
         </p>
+      </div>
 
-        <label>Phone (Optional)</label>
+      <div class="form-group">
+
+        <label>Cell Phone (Optional)</label>
 
         <input name="masked" ui-mask="(999) 999-9999" ng-model="user.phone"  class="form-control ng-dirty ng-valid ng-valid-mask"/>
       </div>
