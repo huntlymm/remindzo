@@ -10,12 +10,7 @@
   <p><a class="btn btn-lg btn-success" ng-href="/remind">Create a New Reminder</a></p>
 </div>
 
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-  </div>
-</div>
+<a class="btn btn-lg" ng-show="currentUser" ng-href="{{google}}">Sync with Your Google Calendar!</a>
 
 <div class="footer">
   <p>♥ from the remindzo team</p>
