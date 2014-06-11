@@ -11,6 +11,12 @@ angular.module('reminderApp')
       $scope.message = '';
       $scope.message1 = '';
       $scope.phone.changed = '';
+      $scope.errors.other = '';
+    };
+
+    $scope.clearPass = function () {
+      $scope.user.oldPassword = '';
+      $scope.user.newPassword = '';
     };
 
     $http.get('api/users/me').success(function (user){

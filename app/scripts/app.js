@@ -6,7 +6,8 @@ angular.module('reminderApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'ui.mask'
+  'ui.mask',
+  'ui.calendar'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

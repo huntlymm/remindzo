@@ -13,7 +13,8 @@
     "angular-route": ">=1.2.*",
     "angular-bootstrap": "~0.11.0",
     "momentjs": "~2.6.0",
-    "angular-ui-utils": "bower-mask"
+    "angular-ui-utils": "bower-mask",
+    "angular-ui-calendar": "latest"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
