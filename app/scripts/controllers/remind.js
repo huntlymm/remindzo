@@ -8,7 +8,9 @@ angular.module('reminderApp')
     //Get current user
     $http.get('api/users/me').success(function(user){
       $scope.reminder.ownerId = user._id;
+      $scope.reminder.owner = user.name;
       $scope.reminder.phone = user.phone || "";
+
     });
 
     $scope.newReminder = function(form) {
@@ -17,7 +19,6 @@ angular.module('reminderApp')
       if(form.$valid) {
         //set date hour & min to match time object
         Reminder.assignTime($scope);
-
         //create new reminder
         Reminder.create($scope.reminder, $location);
       }

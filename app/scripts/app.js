@@ -44,7 +44,8 @@ angular.module('reminderApp', [
       })
       .when('/calendar', {
         templateUrl: 'partials/calendar.html',
-        controller: 'CalendarCtrl'
+        controller: 'CalendarCtrl',
+        authenticate: true
       })
       .otherwise({
         redirectTo: '/'
