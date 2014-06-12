@@ -15,9 +15,4 @@ angular.module('reminderApp')
         $scope.googleIntegrate = url.link;
       });
 
-    $scope.googleSync = function() {
-      $http.post('googledata/pull', {ownerId: $scope.ownerId, phone: $scope.phone}).success(function(status){
-        console.log(status.message);
-      });
-    };
   });

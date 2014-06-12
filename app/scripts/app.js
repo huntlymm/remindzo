@@ -42,9 +42,13 @@ angular.module('reminderApp', [
         templateUrl: 'partials/edit.html',
         controller: 'EditCtrl'
       })
-      // .otherwise({
-      //   redirectTo: '/'
-      // })
+      .when('/calendar', {
+        templateUrl: 'partials/calendar.html',
+        controller: 'CalendarCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      })
       ;
 
     $locationProvider.html5Mode(true);

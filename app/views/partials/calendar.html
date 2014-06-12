@@ -1,0 +1,6 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+<a class="btn btn-lg btn-success" ng-show="currentUser" ng-click="googleSync()">Sync Google Calendar!</a>
+
+
+<div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div>
