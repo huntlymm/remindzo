@@ -9,6 +9,9 @@
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+/*    background-image:url('../images/alarmclock.jpg');
+    background-repeat:no-repeat;
+    color: white;*/
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -88,5 +91,16 @@ body {
 
 #home-link:hover {
     text-decoration: none;
+}
 
+#intro {
+  text-align: center;
+}
+
+.pitch {
+  font-size: 24px;
+}
+
+#landing-page {
+  text-align: center;
 }

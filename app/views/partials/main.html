@@ -1,17 +1,16 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>Never Forget Anything Important Again<span ng-show="currentUser">, {{ currentUser.name }}</span>.</h1>
+<div id="landing-page">
+  <h2 id="intro">Never Forget An Event or To-Do Again<span ng-show="currentUser">, {{ currentUser.name }}</span>.</h2>
   <p class="lead">
-    <img src="images/brain.png" alt="brain"><br>
-    <p>Easily Schedule Text Message and Phone Call Reminders</p>
-    <p>Use remindzo For Important Events and Todo's in Life</p>
+    <p class="pitch">Easily Schedule Text Message Reminders for Yourself or Others.</p>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="/remind">Create a New Reminder</a></p>
+  <hr>
+  <p><h2>Use remindzo to remind yourself in two ways:</h2></p>
+  <a class="btn btn-lg btn-success" ng-href="/remind">Create a Reminder</a>
+  <a class="btn btn-lg btn-primary" ng-href="/calendar">Link With Google Calendar</a>
+
 </div>
-
-<a class="btn btn-lg" ng-show="currentUser" ng-href="{{googleIntegrate}}">Integrate with Your Google Calendar!</a>
-
 
 
 <div class="footer">
