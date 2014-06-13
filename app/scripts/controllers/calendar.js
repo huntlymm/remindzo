@@ -10,6 +10,7 @@ angular.module('reminderApp')
         console.log('calender refreshing..');
         $scope.ownerId = user._id;
         $scope.phone = user.phone;
+        $scope.owner = user.name;
         $http.get('/calreminders/' + user._id).success(function (reminders) {
           var i = 0;
           reminders.forEach(function (reminder) {
@@ -23,7 +24,7 @@ angular.module('reminderApp')
 
     //Pull current week's data from google
     $scope.googleSync = function() {
-      $http.post('googledata/pull', {ownerId: $scope.ownerId, phone: $scope.phone}).success(function(status){
+      $http.post('googledata/pull', {ownerId: $scope.ownerId, phone: $scope.phone, owner: $scope.owner}).success(function(status){
         console.log(status.message);
         $scope.calRefresh();
       });
