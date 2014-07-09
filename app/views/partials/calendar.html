@@ -2,11 +2,11 @@
 
 
 <!-- View if authenticated -->
-<p class="intro">You're synced with Google!</p>
+<p class="intro" ng-show="authenticated" >You're synced with Google!</p>
 <p class="intro"> <strong><i> Here's how it works: </i></strong></p>
 <p>1) To receive a reminder text message 30 minutes before an event, simply add <strong>self@remindzo.com</strong> as an attendee to the event on your Google calendar.
 </p>
-<p>2) To send other people a reminder text, add their phone numbers as attendees to an event.
+<p>2) To send other people a reminder text, add their phone numbers as attendees to an event in your Google Calendar.
 </p>
 <p> <i>Example format for (212) 555-1234</i>: <strong>2125551234@remindzo.com</strong></p>
 <a class="btn btn-lg btn-info" ng-show="authenticated" ng-click="googleSync()">Refresh Calendar</a>
